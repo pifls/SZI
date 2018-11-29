@@ -1,13 +1,47 @@
 <html>
   <head>
-    <title>p5.js example</title>
-    <style> body {padding: 0; margin: 10px;} </style>
+    <title>Waiter</title>
+    <style>
+    body {
+      padding: 0;
+      margin: 10px;
+      font-size: 4px;}
+    #con {display: block}
+    .btn {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 10px;
+      margin: 4px;
+      padding: 1px;
+    }
+    #btn-kitchen {
+      width: 60px;
+      height: 20px;
+    }
+
+    </style>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
     <script src="main.js"></script>
     <script src="waiter.js"></script>
     <script src="cell.js"></script>
     <script src="table.js"></script>
+    <script src="graph.js"></script>
   </head>
   <body>
+    <div id="con">
+      <button class="btn" id="btn-1">1</button>
+      <button class="btn" id="btn-2">2</button>
+      <button class="btn" id="btn-3">3</button>
+      <button class="btn" id="btn-4">4</button>
+      <button class="btn" id="btn-5">5</button>
+    </br>
+      <button class="btn" id="btn-6">6</button>
+      <button class="btn" id="btn-7">7</button>
+      <button class="btn" id="btn-8">8</button>
+      <button class="btn" id="btn-9">9</button>
+      <button class="btn" id="btn-10">10</button>
+      <button class="btn" id="btn-kitchen">kitchen</button>
+    </div>
   </body>
 </html>
