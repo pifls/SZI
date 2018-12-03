@@ -47,7 +47,7 @@ function Table(i, j, n) {
       rect(x, y, w, w);
       textAlign(CENTER);
       fill(255);
-      text(this.n, x + 10, y + 15);
+      text(this.n, x + 13, y + 17);
     }
 
     this.addEdges = arr => {

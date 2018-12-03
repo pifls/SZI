@@ -2,7 +2,7 @@ let cols = 10;
 let rows = 10;
 
 // cell width and height
-let w = 20;
+let w = 25;
 
 /*         0 - waiter at gotoKitchen
     1,2,3... - waiter at table 1,2.3...
@@ -21,9 +21,9 @@ let grid = make2DArray(rows, cols);
 
 /* p5 function to setup some stuff */
 function setup() {
-  createCanvas(201, 201);
+  createCanvas(251, 251);
   img = loadImage("./assets/waiter.png");
-  frameRate(5);
+  frameRate(6);
 
   setupGrid();
 
@@ -219,6 +219,7 @@ function setup() {
 
     /* waiter goes to table */
     const takeOrder = tablePath => {
+
       for (let i = tablePath.length -1; i >= 0; i--) {
         (function() {
          setTimeout(function(){
@@ -240,6 +241,7 @@ function setup() {
       grid[table8PositionX][table8PositionY] = table8;
       grid[table9PositionX][table9PositionY] = table9;
       grid[table10PositionX][table10PositionY] = table10;
+
       for( let i = 0; i < rows; i++){
         for( let j = 0; j < cols; j++){
           grid[i][j].addEdges(grid);
@@ -251,6 +253,10 @@ function setup() {
           graph.addNode(grid[i][j]);
         }
       }
+
+      console.log(waiter);
+      console.log("---------------------");
+
     }, i * 150);
       })();
       }
@@ -258,6 +264,7 @@ function setup() {
 
     /* waiter goes to kitchen */
     const gotoKitchen = tablePath => {
+      console.log("WAITER GOES TO THE KITCHEN");
       tablePath = tablePath.reverse();
       takeOrder(tablePath);
     }

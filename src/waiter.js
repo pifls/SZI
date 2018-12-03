@@ -20,7 +20,7 @@ function Waiter(i, j) {
       fill(200);
     }
     rect(x, y, w, w);
-    image(img, x + 2, y + 2, img.width / 1.4, img.height / 1.4);
+    image(img, x + 2, y + 2, img.width / 1.1, img.height / 1.1);
   }
 
   // add waiter neighbors
