@@ -258,7 +258,7 @@ function setup() {
         }
       }
 
-      console.log(waiter);
+      console.log(`Waiter at position X: ${waiter.i} Y: ${waiter.j}`);
       console.log("---------------------");
 
     }, i * 150);
