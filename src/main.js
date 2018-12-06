@@ -1,8 +1,8 @@
-let cols = 10;
-let rows = 10;
+let cols = 15;
+let rows = 25;
 
 // cell width and height
-let w = 25;
+let w = 30;
 
 /*         0 - waiter at gotoKitchen
     1,2,3... - waiter at table 1,2.3...
@@ -21,9 +21,11 @@ let grid = make2DArray(rows, cols);
 
 /* p5 function to setup some stuff */
 function setup() {
-  createCanvas(251, 251);
+  createCanvas(751, 451);
   img = loadImage("./assets/waiter.png");
-  frameRate(6);
+  img1 = loadImage("./assets/kitchen.png");
+  entryIcon = loadImage("./assets/entry.png");
+  //frameRate(4);
 
   setupGrid();
 
@@ -230,7 +232,10 @@ function setup() {
           }
         }
       let waiter = new Waiter(tablePath[i].i, tablePath[i].j);
+      
       grid[tablePath[i].i][tablePath[i].j]   = waiter;
+      grid[kitchenPositionX][kitchenPositionY] = kitchen;
+      grid[entryPositionX][entryPositionY] = entry;
       grid[table1PositionX][table1PositionY] = table1;
       grid[table2PositionX][table2PositionY] = table2;
       grid[table3PositionX][table3PositionY] = table3;
@@ -257,7 +262,7 @@ function setup() {
       console.log(waiter);
       console.log("---------------------");
 
-    }, i * 150);
+    }, i * 130);
       })();
       }
     }
@@ -290,6 +295,8 @@ const setupGrid = () => {
         grid[i][j] = cell;
       }
     }
+      grid[kitchenPositionX][kitchenPositionY] = kitchen;
+      grid[entryPositionX][entryPositionY] = entry;
       grid[waiterPositionX][waiterPositionY] = waiter;
       grid[table1PositionX][table1PositionY] = table1;
       grid[table2PositionX][table2PositionY] = table2;
@@ -301,7 +308,7 @@ const setupGrid = () => {
       grid[table8PositionX][table8PositionY] = table8;
       grid[table9PositionX][table9PositionY] = table9;
       grid[table10PositionX][table10PositionY] = table10;
-  
+
       /* adding edges to cells (it makes grid a graph) */
       for( let i = 0; i < rows; i++){
         for( let j = 0; j < cols; j++){

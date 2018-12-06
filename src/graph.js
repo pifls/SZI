@@ -18,7 +18,7 @@ function Graph() {
                 finish = this.nodes[i];
             }
           }
-        let start = this.nodes[0];
+        let start = this.nodes[15];
         start.searched = true;
         queue.push(start);
 
