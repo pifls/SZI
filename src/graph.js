@@ -8,7 +8,7 @@ function Graph() {
 
     // Function receives table and output an array with path from kitchen to that table
     // Function uses BFS algorithm
-    this.findPath = (table) => {
+    this.findPath = (topVertex, table) => {
         setupGrid();
 
         queue = [];
@@ -17,8 +17,10 @@ function Graph() {
             if (this.nodes[i] === table) {
                 finish = this.nodes[i];
             }
+            if (this.nodes[i] === topVertex) {
+                start = this.nodes[i];
+            }
           }
-        let start = this.nodes[15];
         start.searched = true;
         queue.push(start);
 

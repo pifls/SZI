@@ -37,16 +37,16 @@ function setup() {
       }
     }
    /* finding shortest path to tables */
-  let table1Path = graph.findPath(table1);
-  let table2Path = graph.findPath(table2);
-  let table3Path = graph.findPath(table3);
-  let table4Path = graph.findPath(table4);
-  let table5Path = graph.findPath(table5);
-  let table6Path = graph.findPath(table6);
-  let table7Path = graph.findPath(table7);
-  let table8Path = graph.findPath(table8);
-  let table9Path = graph.findPath(table9);
-  let table10Path = graph.findPath(table10);
+  let table1Path = graph.findPath(waiter, table1);
+  let table2Path = graph.findPath(waiter, table2);
+  let table3Path = graph.findPath(waiter, table3);
+  let table4Path = graph.findPath(waiter, table4);
+  let table5Path = graph.findPath(waiter, table5);
+  let table6Path = graph.findPath(waiter, table6);
+  let table7Path = graph.findPath(waiter, table7);
+  let table8Path = graph.findPath(waiter, table8);
+  let table9Path = graph.findPath(waiter, table9);
+  let table10Path = graph.findPath(waiter, table10);
   /* EventListeners for buttons */
   document.getElementById("btn-1").addEventListener("click", () => {
       if (waiterState == 0) {
@@ -162,16 +162,16 @@ function setup() {
   document.getElementById("btn-kitchen").addEventListener("click", () => {
 
 
-    let table1Path = graph.findPath(table1);
-    let table2Path = graph.findPath(table2);
-    let table3Path = graph.findPath(table3);
-    let table4Path = graph.findPath(table4);
-    let table5Path = graph.findPath(table5);
-    let table6Path = graph.findPath(table6);
-    let table7Path = graph.findPath(table7);
-    let table8Path = graph.findPath(table8);
-    let table9Path = graph.findPath(table9);
-    let table10Path = graph.findPath(table10);
+    let table1Path = graph.findPath(waiter, table1);
+    let table2Path = graph.findPath(waiter, table2);
+    let table3Path = graph.findPath(waiter, table3);
+    let table4Path = graph.findPath(waiter, table4);
+    let table5Path = graph.findPath(waiter, table5);
+    let table6Path = graph.findPath(waiter, table6);
+    let table7Path = graph.findPath(waiter, table7);
+    let table8Path = graph.findPath(waiter, table8);
+    let table9Path = graph.findPath(waiter, table9);
+    let table10Path = graph.findPath(waiter, table10);
 
       switch (waiterState) {
         case 1:
