@@ -25,7 +25,6 @@ function setup() {
   img = loadImage("./assets/waiter.png");
   img1 = loadImage("./assets/kitchen.png");
   entryIcon = loadImage("./assets/entry.png");
-  //frameRate(4);
 
   setupGrid();
 
@@ -262,7 +261,7 @@ function setup() {
       console.log(waiter);
       console.log("---------------------");
 
-    }, i * 130);
+    }, i * 150);
       })();
       }
     }

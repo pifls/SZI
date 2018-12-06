@@ -14,10 +14,16 @@ function Waiter(i, j) {
     let y = j * w;
 
     // draw a cell with a waiter
+    if (i == 1 && j == 0) {
+      stroke(0);
+      fill(245);
+      rect(x, y, w, w);
+    } else {
     stroke(0);
     fill(245);
     rect(x, y, w, w);
     image(img, x + 3, y + 3, img.width / 1.1, img.height / 1.1);
+    }
   }
 
   // add waiter neighbors
