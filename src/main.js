@@ -23,7 +23,7 @@ let grid = make2DArray(rows, cols);
 function setup() {
   createCanvas(751, 451);
   img = loadImage("./assets/waiter.png");
-  img1 = loadImage("./assets/kitchen.png");
+  kitchenImg = loadImage("./assets/kitchen.png");
   tableImg = loadImage("./assets/table.png");
   client1Img = loadImage("./assets/client1.png");
   client2Img = loadImage("./assets/client2.png");
