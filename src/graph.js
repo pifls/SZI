@@ -6,21 +6,15 @@ function Graph() {
         this.nodes.push(n);
     }
 
-    // Function receives table and output an array with path from kitchen to that table
-    // Function uses BFS algorithm
-    this.findPath = (topVertex, table) => {
+    // Function receives start and finish and return the shortest path between these places / uses BFS algorithm
+    this.findPath = (client) => {
         setupGrid();
 
         queue = [];
+        let start = waiter;
+        let finish = client;
+        
 
-        for (let i = 0; i < this.nodes.length; i++) {
-            if (this.nodes[i] === table) {
-                finish = this.nodes[i];
-            }
-            if (this.nodes[i] === topVertex) {
-                start = this.nodes[i];
-            }
-          }
         start.searched = true;
         queue.push(start);
 

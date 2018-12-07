@@ -24,7 +24,15 @@ function setup() {
   createCanvas(751, 451);
   img = loadImage("./assets/waiter.png");
   img1 = loadImage("./assets/kitchen.png");
-  entryIcon = loadImage("./assets/entry.png");
+  tableImg = loadImage("./assets/table.png");
+  client1Img = loadImage("./assets/client1.png");
+  client2Img = loadImage("./assets/client2.png");
+  client3Img = loadImage("./assets/client3.png");
+  client4Img = loadImage("./assets/client4.png");
+  client5Img = loadImage("./assets/client5.png");
+  client6Img = loadImage("./assets/client6.png");
+  client7Img = loadImage("./assets/client7.png");
+  client8Img = loadImage("./assets/client8.png");
 
   setupGrid();
 
@@ -36,21 +44,20 @@ function setup() {
       }
     }
    /* finding shortest path to tables */
-  let table1Path = graph.findPath(waiter, table1);
-  let table2Path = graph.findPath(waiter, table2);
-  let table3Path = graph.findPath(waiter, table3);
-  let table4Path = graph.findPath(waiter, table4);
-  let table5Path = graph.findPath(waiter, table5);
-  let table6Path = graph.findPath(waiter, table6);
-  let table7Path = graph.findPath(waiter, table7);
-  let table8Path = graph.findPath(waiter, table8);
-  let table9Path = graph.findPath(waiter, table9);
-  let table10Path = graph.findPath(waiter, table10);
+  let client1Path = graph.findPath(client1);
+  let client2Path = graph.findPath(client2);
+  let client3Path = graph.findPath(client3);
+  let client4Path = graph.findPath(client4);
+  let client5Path = graph.findPath(client5);
+  let client6Path = graph.findPath(client6);
+  let client7Path = graph.findPath(client7);
+  let client8Path = graph.findPath(client8);
+
   /* EventListeners for buttons */
   document.getElementById("btn-1").addEventListener("click", () => {
       if (waiterState == 0) {
           waiterState = 1;
-          takeOrder(table1Path);
+          takeOrder(client1Path);
       }
       else if (waiterState == 1) {
         alert("Waiter is at this table");
@@ -60,7 +67,7 @@ function setup() {
   });
   document.getElementById("btn-2").addEventListener("click", () => {
     if (waiterState == 0) {
-        takeOrder(table2Path);
+        takeOrder(client2Path);
         waiterState = 2;
     }
     else if (waiterState == 2) {
@@ -71,7 +78,7 @@ function setup() {
   });
   document.getElementById("btn-3").addEventListener("click", () => {
     if (waiterState == 0) {
-        takeOrder(table3Path);
+        takeOrder(client3Path);
         waiterState = 3;
     }
     else if (waiterState == 3) {
@@ -82,7 +89,7 @@ function setup() {
   });
   document.getElementById("btn-4").addEventListener("click", () => {
     if (waiterState == 0) {
-        takeOrder(table4Path);
+        takeOrder(client4Path);
         waiterState = 4;
     }
     else if (waiterState == 4) {
@@ -93,7 +100,7 @@ function setup() {
   });
   document.getElementById("btn-5").addEventListener("click", () => {
     if (waiterState == 0) {
-        takeOrder(table5Path);
+        takeOrder(client5Path);
         waiterState = 5;
     }
     else if (waiterState == 5) {
@@ -104,7 +111,7 @@ function setup() {
   });
   document.getElementById("btn-6").addEventListener("click", () => {
     if (waiterState == 0) {
-        takeOrder(table6Path);
+        takeOrder(client6Path);
         waiterState = 6;
     }
     else if (waiterState == 6) {
@@ -115,7 +122,7 @@ function setup() {
   });
   document.getElementById("btn-7").addEventListener("click", () => {
     if (waiterState == 0) {
-        takeOrder(table7Path);
+        takeOrder(client7Path);
         waiterState = 7;
     }
     else if (waiterState == 7) {
@@ -126,32 +133,10 @@ function setup() {
   });
   document.getElementById("btn-8").addEventListener("click", () => {
     if (waiterState == 0) {
-        takeOrder(table8Path);
+        takeOrder(client8Path);
         waiterState = 8;
     }
     else if (waiterState == 8) {
-      alert("Waiter already at this table");
-    } else {
-      alert("Waiter is busy");
-    }
-  });
-  document.getElementById("btn-9").addEventListener("click", () => {
-    if (waiterState == 0) {
-        takeOrder(table9Path);
-        waiterState = 9;
-    }
-    else if (waiterState == 9) {
-      alert("Waiter already at this table");
-    } else {
-      alert("Waiter is busy");
-    }
-  });
-  document.getElementById("btn-10").addEventListener("click", () => {
-    if (waiterState == 0) {
-        takeOrder(table10Path);
-        waiterState = 10;
-    }
-    else if (waiterState == 10) {
       alert("Waiter already at this table");
     } else {
       alert("Waiter is busy");
@@ -161,56 +146,46 @@ function setup() {
   document.getElementById("btn-kitchen").addEventListener("click", () => {
 
 
-    let table1Path = graph.findPath(waiter, table1);
-    let table2Path = graph.findPath(waiter, table2);
-    let table3Path = graph.findPath(waiter, table3);
-    let table4Path = graph.findPath(waiter, table4);
-    let table5Path = graph.findPath(waiter, table5);
-    let table6Path = graph.findPath(waiter, table6);
-    let table7Path = graph.findPath(waiter, table7);
-    let table8Path = graph.findPath(waiter, table8);
-    let table9Path = graph.findPath(waiter, table9);
-    let table10Path = graph.findPath(waiter, table10);
+    let client1Path = graph.findPath(client1);
+    let client2Path = graph.findPath(client2);
+    let client3Path = graph.findPath(client3);
+    let client4Path = graph.findPath(client4);
+    let client5Path = graph.findPath(client5);
+    let client6Path = graph.findPath(client6);
+    let client7Path = graph.findPath(client7);
+    let client8Path = graph.findPath(client8);
 
       switch (waiterState) {
         case 1:
-          gotoKitchen(table1Path)
+          gotoKitchen(client1Path)
           waiterState = 0;
           break;
         case 2:
-            gotoKitchen(table2Path)
+            gotoKitchen(client2Path)
             waiterState = 0;
             break;
         case 3:
-            gotoKitchen(table3Path)
+            gotoKitchen(client3Path)
             waiterState = 0;
             break;
         case 4:
-            gotoKitchen(table4Path)
+            gotoKitchen(client4Path)
             waiterState = 0;
             break;
         case 5:
-            gotoKitchen(table5Path)
+            gotoKitchen(client5Path)
             waiterState = 0;
             break;
         case 6:
-            gotoKitchen(table6Path)
+            gotoKitchen(client6Path)
             waiterState = 0;
             break;
         case 7:
-            gotoKitchen(table7Path)
+            gotoKitchen(client7Path)
             waiterState = 0;
             break;
         case 8:
-            gotoKitchen(table8Path)
-            waiterState = 0;
-            break;
-        case 9:
-            gotoKitchen(table9Path)
-            waiterState = 0;
-            break;
-        case 10:
-            gotoKitchen(table10Path)
+            gotoKitchen(client8Path)
             waiterState = 0;
             break;
         default:
@@ -219,9 +194,9 @@ function setup() {
     });
 
     /* waiter goes to table */
-    const takeOrder = tablePath => {
+    const takeOrder = clientPath => {
 
-      for (let i = tablePath.length -1; i >= 0; i--) {
+      for (let i = clientPath.length -1; i >= 0; i--) {
         (function() {
          setTimeout(function(){
         for( let i = 0; i < rows; i++){
@@ -230,11 +205,10 @@ function setup() {
             grid[i][j] = cell;
           }
         }
-      let waiter = new Waiter(tablePath[i].i, tablePath[i].j);
+      let waiter = new Waiter(clientPath[i].i, clientPath[i].j);
       
-      grid[tablePath[i].i][tablePath[i].j]   = waiter;
+      grid[clientPath[i].i][clientPath[i].j]   = waiter;
       grid[kitchenPositionX][kitchenPositionY] = kitchen;
-      grid[entryPositionX][entryPositionY] = entry;
       grid[table1PositionX][table1PositionY] = table1;
       grid[table2PositionX][table2PositionY] = table2;
       grid[table3PositionX][table3PositionY] = table3;
@@ -245,6 +219,16 @@ function setup() {
       grid[table8PositionX][table8PositionY] = table8;
       grid[table9PositionX][table9PositionY] = table9;
       grid[table10PositionX][table10PositionY] = table10;
+
+      grid[client1PositionX][client1PositionY] = client1;
+      grid[client2PositionX][client2PositionY] = client2;
+      grid[client3PositionX][client3PositionY] = client3;
+      grid[client4PositionX][client4PositionY] = client4;
+      grid[client5PositionX][client5PositionY] = client5;
+      grid[client6PositionX][client6PositionY] = client6;
+      grid[client7PositionX][client7PositionY] = client7;
+      grid[client8PositionX][client8PositionY] = client8;
+
 
       for( let i = 0; i < rows; i++){
         for( let j = 0; j < cols; j++){
@@ -295,7 +279,6 @@ const setupGrid = () => {
       }
     }
       grid[kitchenPositionX][kitchenPositionY] = kitchen;
-      grid[entryPositionX][entryPositionY] = entry;
       grid[waiterPositionX][waiterPositionY] = waiter;
       grid[table1PositionX][table1PositionY] = table1;
       grid[table2PositionX][table2PositionY] = table2;
@@ -307,6 +290,15 @@ const setupGrid = () => {
       grid[table8PositionX][table8PositionY] = table8;
       grid[table9PositionX][table9PositionY] = table9;
       grid[table10PositionX][table10PositionY] = table10;
+      
+      grid[client1PositionX][client1PositionY] = client1;
+      grid[client2PositionX][client2PositionY] = client2;
+      grid[client3PositionX][client3PositionY] = client3;
+      grid[client4PositionX][client4PositionY] = client4;
+      grid[client5PositionX][client5PositionY] = client5;
+      grid[client6PositionX][client6PositionY] = client6;
+      grid[client7PositionX][client7PositionY] = client7;
+      grid[client8PositionX][client8PositionY] = client8;
 
       /* adding edges to cells (it makes grid a graph) */
       for( let i = 0; i < rows; i++){

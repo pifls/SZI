@@ -43,11 +43,9 @@ function Table(i, j, n) {
 
       // draw a cell with table and it's number
       stroke(0);
-      fill(30);
+      fill(245);
       rect(x, y, w, w);
-      textAlign(CENTER);
-      fill(255);
-      text(this.n, x + 13, y + 17);
+      image(tableImg, x + 3, y + 3, img.width / 1.3, img.height / 1.3);
     }
 
     this.addEdges = arr => {
