@@ -38,7 +38,7 @@ function Client( img, i, j) {
     let y = j * w;
 
     // draw a cell with a waiter
-    stroke(200);
+    stroke(150);
     fill('#e4e4e4');
     rect(x, y, w, w);
 
