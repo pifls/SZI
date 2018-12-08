@@ -1,4 +1,4 @@
-let client1PositionX = 7;
+let client1PositionX = 6;
 let client1PositionY = 3;
 let client1 = new Client(1, client1PositionX, client1PositionY);
 let client2PositionX = 12;
@@ -16,7 +16,7 @@ let client5 = new Client(5, client5PositionX, client5PositionY);
 let client6PositionX = 17;
 let client6PositionY = 10;
 let client6 = new Client(6, client6PositionX, client6PositionY);
-let client7PositionX = 18;
+let client7PositionX = 16;
 let client7PositionY = 3;
 let client7 = new Client(7, client7PositionX, client7PositionY);
 let client8PositionX = 3;

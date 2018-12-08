@@ -7,24 +7,19 @@ const removeFromArray = (arr, element) => {
 }
 
 const heuristic = (a, b) => {
-    let d = abs(a.i - b.i) + abs(a.j - b.j);
+
+    let d = Math.hypot(a.i - b.i, a.j - b.j);
     return d;
 }
 
 function Graph() {
-    // array with all objects from grid
-    this.nodes = [];
-
-    this.addNode = n => {
-        this.nodes.push(n);
-    }
 
     // Function receives start and finish and return the shortest path between these places / uses BFS algorithm
-    this.findPath = (client) => {
+    this.findPath = (s, f) => {
         setupGrid();
 
-        let start = waiter;
-        let finish = client;
+        let start = s;
+        let finish = f;
         let openSet = [];
         let closedSet = [];
         let path = [];

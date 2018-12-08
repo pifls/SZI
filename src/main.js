@@ -1,5 +1,5 @@
 let cols = 15;
-let rows = 25;
+let rows = 20;
 
 // cell width and height
 let w = 30;
@@ -21,10 +21,12 @@ let grid = make2DArray(rows, cols);
 
 /* p5 function to setup some stuff */
 function setup() {
-  createCanvas(751, 451);
+  createCanvas(601, 451);
   img = loadImage("./assets/waiter.png");
   kitchenImg = loadImage("./assets/kitchen.png");
   tableImg = loadImage("./assets/table.png");
+  spotImg = loadImage("./assets/spot.png");
+  plantImg = loadImage("./assets/plant.png");
   client1Img = loadImage("./assets/client1.png");
   client2Img = loadImage("./assets/client2.png");
   client3Img = loadImage("./assets/client3.png");
@@ -36,22 +38,17 @@ function setup() {
 
   setupGrid();
 
-    /* adding nodes to graph (just transfering cells to graph) */
     let graph = new Graph();
-    for( let i = 0; i < rows; i++){
-      for( let j = 0; j < cols; j++){
-        graph.addNode(grid[i][j]);
-      }
-    }
+
    /* finding shortest path to tables */
-  let client1Path = graph.findPath(client1);
-  let client2Path = graph.findPath(client2);
-  let client3Path = graph.findPath(client3);
-  let client4Path = graph.findPath(client4);
-  let client5Path = graph.findPath(client5);
-  let client6Path = graph.findPath(client6);
-  let client7Path = graph.findPath(client7);
-  let client8Path = graph.findPath(client8);
+  let client1Path = graph.findPath(waiter, client1);
+  let client2Path = graph.findPath(waiter, client2);
+  let client3Path = graph.findPath(waiter, client3);
+  let client4Path = graph.findPath(waiter, client4);
+  let client5Path = graph.findPath(waiter, client5);
+  let client6Path = graph.findPath(waiter, client6);
+  let client7Path = graph.findPath(waiter, client7);
+  let client8Path = graph.findPath(waiter, client8);
 
   /* EventListeners for buttons */
   document.getElementById("btn-1").addEventListener("click", () => {
@@ -194,11 +191,11 @@ function setup() {
   document.getElementById("btn-kitchen").addEventListener("click", () => {
 
     let timeToLeave = 1000;
-    let timeToCome = 1000;
+    let timeToCome = 10000;
 
       switch (waiterState) {
         case 1:
-          let client1Path = graph.findPath(client1);
+          let client1Path = graph.findPath(waiter, client1);
           gotoKitchen(client1Path);
           waiterState = 0;
           setTimeout(() => {
@@ -210,7 +207,7 @@ function setup() {
           }, timeToCome)
           break;
         case 2:
-            let client2Path = graph.findPath(client2);
+            let client2Path = graph.findPath(waiter, client2);
             gotoKitchen(client2Path)
             waiterState = 0;
             setTimeout(() => {
@@ -222,7 +219,7 @@ function setup() {
             }, timeToCome)
             break;
         case 3:
-            let client3Path = graph.findPath(client3);
+            let client3Path = graph.findPath(waiter, client3);
             gotoKitchen(client3Path)
             waiterState = 0;
             setTimeout(() => {
@@ -234,7 +231,7 @@ function setup() {
             }, timeToCome)
             break;
         case 4:
-            let client4Path = graph.findPath(client4);
+            let client4Path = graph.findPath(waiter, client4);
             gotoKitchen(client4Path)
             waiterState = 0;
             setTimeout(() => {
@@ -246,7 +243,7 @@ function setup() {
             }, timeToCome)
             break;
         case 5:
-            let client5Path = graph.findPath(client5);
+            let client5Path = graph.findPath(waiter, client5);
             gotoKitchen(client5Path)
             waiterState = 0;
             setTimeout(() => {
@@ -258,7 +255,7 @@ function setup() {
             }, timeToCome)
             break;
         case 6:
-            let client6Path = graph.findPath(client6);
+            let client6Path = graph.findPath(waiter, client6);
             gotoKitchen(client6Path)
             waiterState = 0;
             setTimeout(() => {
@@ -270,7 +267,7 @@ function setup() {
             }, timeToCome)
             break;
         case 7:
-            let client7Path = graph.findPath(client7);
+            let client7Path = graph.findPath(waiter, client7);
             gotoKitchen(client7Path)
             waiterState = 0;
             setTimeout(() => {
@@ -282,7 +279,7 @@ function setup() {
             }, timeToCome)
             break;
         case 8:
-            let client8Path = graph.findPath(client8);
+            let client8Path = graph.findPath(waiter, client8);
             gotoKitchen(client8Path)
             waiterState = 0;
             setTimeout(() => {
@@ -311,8 +308,7 @@ function setup() {
           }
         }
       let waiter = new Waiter(clientPath[i].i, clientPath[i].j);
-      
-      grid[clientPath[i].i][clientPath[i].j]   = waiter;
+
       grid[kitchenPositionX][kitchenPositionY] = kitchen;
       grid[table1PositionX][table1PositionY] = table1;
       grid[table2PositionX][table2PositionY] = table2;
@@ -334,18 +330,38 @@ function setup() {
       grid[client7PositionX][client7PositionY] = client7;
       grid[client8PositionX][client8PositionY] = client8;
 
+      grid[spot1PositionX][spot1PositionY] = spot1;
+      grid[spot2PositionX][spot2PositionY] = spot2;
+      grid[spot3PositionX][spot3PositionY] = spot3;
+      grid[spot4PositionX][spot4PositionY] = spot4;
+      grid[spot5PositionX][spot5PositionY] = spot5;
+      grid[spot6PositionX][spot6PositionY] = spot6;
+      grid[spot7PositionX][spot7PositionY] = spot7;
+      grid[spot8PositionX][spot8PositionY] = spot8;
+      grid[spot9PositionX][spot9PositionY] = spot9;
+      grid[spot10PositionX][spot10PositionY] = spot10;
+
+      grid[plant1PositionX][plant1PositionY] = plant1;
+      grid[plant2PositionX][plant2PositionY] = plant2;
+      grid[plant3PositionX][plant3PositionY] = plant3;
+      grid[plant4PositionX][plant4PositionY] = plant4;
+      grid[plant5PositionX][plant5PositionY] = plant5;
+      grid[plant6PositionX][plant6PositionY] = plant6;
+      grid[plant7PositionX][plant7PositionY] = plant7;
+      grid[plant8PositionX][plant8PositionY] = plant8;
+      grid[plant9PositionX][plant9PositionY] = plant9;
+      grid[plant10PositionX][plant10PositionY] = plant10;
+
+      grid[clientPath[i].i][clientPath[i].j]   = waiter;
+
 
       for( let i = 0; i < rows; i++){
         for( let j = 0; j < cols; j++){
           grid[i][j].addEdges(grid);
         }
       }
+
       let graph = new Graph();
-      for( let i = 0; i < rows; i++){
-        for( let j = 0; j < cols; j++){
-          graph.addNode(grid[i][j]);
-        }
-      }
 
       console.log(`Waiter at position X: ${waiter.i} Y: ${waiter.j}`);
       console.log("---------------------");
@@ -404,6 +420,29 @@ const setupGrid = () => {
       grid[client6PositionX][client6PositionY] = client6;
       grid[client7PositionX][client7PositionY] = client7;
       grid[client8PositionX][client8PositionY] = client8;
+
+      grid[spot1PositionX][spot1PositionY] = spot1;
+      grid[spot2PositionX][spot2PositionY] = spot2;
+      grid[spot3PositionX][spot3PositionY] = spot3;
+      grid[spot4PositionX][spot4PositionY] = spot4;
+      grid[spot5PositionX][spot5PositionY] = spot5;
+      grid[spot6PositionX][spot6PositionY] = spot6;
+      grid[spot7PositionX][spot7PositionY] = spot7;
+      grid[spot8PositionX][spot8PositionY] = spot8;
+      grid[spot9PositionX][spot9PositionY] = spot9;
+      grid[spot10PositionX][spot10PositionY] = spot10;
+
+      grid[plant1PositionX][plant1PositionY] = plant1;
+      grid[plant2PositionX][plant2PositionY] = plant2;
+      grid[plant3PositionX][plant3PositionY] = plant3;
+      grid[plant4PositionX][plant4PositionY] = plant4;
+      grid[plant5PositionX][plant5PositionY] = plant5;
+      grid[plant6PositionX][plant6PositionY] = plant6;
+      grid[plant7PositionX][plant7PositionY] = plant7;
+      grid[plant8PositionX][plant8PositionY] = plant8;
+      grid[plant9PositionX][plant9PositionY] = plant9;
+      grid[plant10PositionX][plant10PositionY] = plant10;
+      
 
       /* adding edges to cells (it makes grid a graph) */
       for( let i = 0; i < rows; i++){
