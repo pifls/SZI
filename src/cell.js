@@ -10,7 +10,7 @@ function Cell(i, j) {
       let y = j * w;
 
       // draw a cell
-      stroke(0);
+      stroke(200);
       fill(245);
       if (x == 0 && y == 0) {
         fill(200);

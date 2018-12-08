@@ -13,7 +13,7 @@ function Kitchen(i, j) {
       let y = j * w;
 
     // draw a cell with a waiter
-    stroke(0);
+    stroke(200);
     fill(245);
     rect(x, y, w, w);
     image(kitchenImg, x + 3 , y + 3, img.width / 1.3, img.height / 1.3);

@@ -11,7 +11,7 @@ let table4PositionX = 16;
 let table4PositionY = 10;
 let table4 = new Table(table4PositionX, table4PositionY, 4);
 let table5PositionX = 20;
-let table5PositionY = 10;
+let table5PositionY = 8;
 let table5 = new Table(table5PositionX, table5PositionY, 5);
 let table6PositionX = 12;
 let table6PositionY = 10;
@@ -42,7 +42,7 @@ function Table(i, j, n) {
       let y = j * w;
 
       // draw a cell with table and it's number
-      stroke(0);
+      stroke(200);
       fill(245);
       rect(x, y, w, w);
       image(tableImg, x + 3, y + 3, img.width / 1.3, img.height / 1.3);
