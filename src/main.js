@@ -55,9 +55,13 @@ function setup() {
 
   /* EventListeners for buttons */
   document.getElementById("btn-1").addEventListener("click", () => {
-      if (waiterState == 0) {
+
+      if (waiterState == 0 && client1.state) {
           waiterState = 1;
           takeOrder(client1Path);
+      }
+      else if (!client1.state) {
+        alert("This client left");
       }
       else if (waiterState == 1) {
         alert("Waiter is at this table");
@@ -66,9 +70,12 @@ function setup() {
       }
   });
   document.getElementById("btn-2").addEventListener("click", () => {
-    if (waiterState == 0) {
+    if (waiterState == 0 && client2.state) {
         takeOrder(client2Path);
         waiterState = 2;
+    }
+    else if (!client2.state) {
+      alert("This client left");
     }
     else if (waiterState == 2) {
       alert("Waiter already at this table");
@@ -77,9 +84,12 @@ function setup() {
     }
   });
   document.getElementById("btn-3").addEventListener("click", () => {
-    if (waiterState == 0) {
+    if (waiterState == 0 && client3.state) {
         takeOrder(client3Path);
         waiterState = 3;
+    }
+    else if (!client3.state) {
+      alert("This client left");
     }
     else if (waiterState == 3) {
       alert("Waiter already at this table");
@@ -88,9 +98,12 @@ function setup() {
     }
   });
   document.getElementById("btn-4").addEventListener("click", () => {
-    if (waiterState == 0) {
+    if (waiterState == 0 && client4.state) {
         takeOrder(client4Path);
         waiterState = 4;
+    }
+    else if (!client4.state) {
+      alert("This client left");
     }
     else if (waiterState == 4) {
       alert("Waiter already at this table");
@@ -99,9 +112,12 @@ function setup() {
     }
   });
   document.getElementById("btn-5").addEventListener("click", () => {
-    if (waiterState == 0) {
+    if (waiterState == 0 && client5.state) {
         takeOrder(client5Path);
         waiterState = 5;
+    }
+    else if (!client5.state) {
+      alert("This client left");
     }
     else if (waiterState == 5) {
       alert("Waiter already at this table");
@@ -110,9 +126,12 @@ function setup() {
     }
   });
   document.getElementById("btn-6").addEventListener("click", () => {
-    if (waiterState == 0) {
+    if (waiterState == 0 && client6.state) {
         takeOrder(client6Path);
         waiterState = 6;
+    }
+    else if (!client6.state) {
+      alert("This client left");
     }
     else if (waiterState == 6) {
       alert("Waiter already at this table");
@@ -121,9 +140,12 @@ function setup() {
     }
   });
   document.getElementById("btn-7").addEventListener("click", () => {
-    if (waiterState == 0) {
+    if (waiterState == 0 && client7.state) {
         takeOrder(client7Path);
         waiterState = 7;
+    }
+    else if (!client7.state) {
+      alert("This client left");
     }
     else if (waiterState == 7) {
       alert("Waiter already at this table");
@@ -132,9 +154,12 @@ function setup() {
     }
   });
   document.getElementById("btn-8").addEventListener("click", () => {
-    if (waiterState == 0) {
+    if (waiterState == 0 && client8.state) {
         takeOrder(client8Path);
         waiterState = 8;
+    }
+    else if (!client8.state) {
+      alert("This client left");
     }
     else if (waiterState == 8) {
       alert("Waiter already at this table");
@@ -145,7 +170,6 @@ function setup() {
 
   document.getElementById("btn-kitchen").addEventListener("click", () => {
 
-
     let client1Path = graph.findPath(client1);
     let client2Path = graph.findPath(client2);
     let client3Path = graph.findPath(client3);
@@ -155,41 +179,100 @@ function setup() {
     let client7Path = graph.findPath(client7);
     let client8Path = graph.findPath(client8);
 
+    let timeToLeave = 1000;
+    let timeToCome = 30000;
+
       switch (waiterState) {
         case 1:
           gotoKitchen(client1Path)
           waiterState = 0;
+          setTimeout(() => {
+            client1.state = false;
+          }, timeToLeave)
+
+          setTimeout(() => {
+            client1.state = true;
+          }, timeToCome)
           break;
         case 2:
             gotoKitchen(client2Path)
             waiterState = 0;
+            setTimeout(() => {
+              client2.state = false;
+            }, timeToLeave)
+  
+            setTimeout(() => {
+              client2.state = true;
+            }, timeToCome)
             break;
         case 3:
             gotoKitchen(client3Path)
             waiterState = 0;
+            setTimeout(() => {
+              client3.state = false;
+            }, timeToLeave)
+  
+            setTimeout(() => {
+              client3.state = true;
+            }, timeToCome)
             break;
         case 4:
             gotoKitchen(client4Path)
             waiterState = 0;
+            setTimeout(() => {
+              client4.state = false;
+            }, timeToLeave)
+  
+            setTimeout(() => {
+              client4.state = true;
+            }, timeToCome)
             break;
         case 5:
             gotoKitchen(client5Path)
             waiterState = 0;
+            setTimeout(() => {
+              client5.state = false;
+            }, timeToLeave)
+  
+            setTimeout(() => {
+              client5.state = true;
+            }, timeToCome)
             break;
         case 6:
             gotoKitchen(client6Path)
             waiterState = 0;
+            setTimeout(() => {
+              client6.state = false;
+            }, timeToLeave)
+  
+            setTimeout(() => {
+              client6.state = true;
+            }, timeToCome)
             break;
         case 7:
             gotoKitchen(client7Path)
             waiterState = 0;
+            setTimeout(() => {
+              client7.state = false;
+            }, timeToLeave)
+  
+            setTimeout(() => {
+              client7.state = true;
+            }, timeToCome)
             break;
         case 8:
             gotoKitchen(client8Path)
             waiterState = 0;
+            setTimeout(() => {
+              client8.state = false;
+            }, timeToLeave)
+  
+            setTimeout(() => {
+              client8.state = true;
+            }, timeToCome)
             break;
         default:
-            alert("Waiter is in kitchen!")
+            alert("Waiter already in the kitchen!")
       }
     });
 

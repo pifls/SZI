@@ -26,6 +26,7 @@ let client8 = new Client(8, client8PositionX, client8PositionY);
 function Client( img, i, j) {
   this.i = i;
   this.j = j;
+  this.state = true;
   this.edges = [];
   this.searched = false;
   this.parent = null;
@@ -41,33 +42,35 @@ function Client( img, i, j) {
     fill(245);
     rect(x, y, w, w);
 
-    switch (this.img) {
-      case 1:
-        image(client1Img, x, y, img.width, img.height);
-        break;
-      case 2:
-        image(client2Img, x, y, img.width, img.height);
-        break;
-      case 3:
-        image(client3Img, x, y, img.width, img.height);
-        break;
-      case 4:
-        image(client4Img, x, y, img.width, img.height);
-        break;
-      case 5:
-        image(client5Img, x, y, img.width, img.height);
-        break;
-      case 6:
-        image(client6Img, x, y, img.width, img.height);
-        break;
-      case 7:
-        image(client7Img, x, y, img.width, img.height);
-        break;
-      case 8:
-        image(client8Img, x, y, img.width, img.height);
-        break;
-      default: 
-    }
+    if ( this.state ) {
+      switch (this.img) {
+        case 1:
+          image(client1Img, x, y, img.width, img.height);
+          break;
+        case 2:
+          image(client2Img, x, y, img.width, img.height);
+          break;
+        case 3:
+          image(client3Img, x, y, img.width, img.height);
+          break;
+        case 4:
+          image(client4Img, x, y, img.width, img.height);
+          break;
+        case 5:
+          image(client5Img, x, y, img.width, img.height);
+          break;
+        case 6:
+          image(client6Img, x, y, img.width, img.height);
+          break;
+        case 7:
+          image(client7Img, x, y, img.width, img.height);
+          break;
+        case 8:
+          image(client8Img, x, y, img.width, img.height);
+          break;
+        default: 
+      }
+  }
   }
 
   // add client neighbors
