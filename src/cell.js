@@ -11,9 +11,9 @@ function Cell(i, j) {
 
       // draw a cell
       stroke(200);
-      fill(245);
+      fill('#e4e4e4');
       if (x == 0 && y == 0) {
-        fill(200);
+        fill('#e4e4e4');
       }
       rect(x, y, w, w);
     }

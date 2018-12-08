@@ -39,7 +39,7 @@ function Client( img, i, j) {
 
     // draw a cell with a waiter
     stroke(200);
-    fill(245);
+    fill('#e4e4e4');
     rect(x, y, w, w);
 
     if ( this.state ) {
