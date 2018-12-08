@@ -9,17 +9,21 @@ function Waiter(i, j) {
   this.searched = false;
   this.parent = null;
 
+  this.f = 0;
+  this.g = 0;
+  this.h = 0;
+
   this.show = () => {
     let x = i * w;
     let y = j * w;
 
     // draw a cell with a waiter
     if (i == 1 && j == 0) {
-      stroke(150);
+      stroke(200);
       fill('#e4e4e4');
       rect(x, y, w, w);
     } else {
-    stroke(150);
+    stroke(200);
     fill('#e4e4e4');
     rect(x, y, w, w);
     image(img, x + 3, y + 3, img.width / 1.1, img.height / 1.1);
@@ -34,7 +38,11 @@ function Waiter(i, j) {
           ((arr[i][j].i === this.i && arr[i][j].j === this.j - 1) || // top edge
             (arr[i][j].i === this.i + 1 && arr[i][j].j === this.j) || // right edge
             (arr[i][j].i === this.i && arr[i][j].j === this.j + 1) || // bottom edge
-            (arr[i][j].i === this.i - 1 && arr[i][j].j === this.j)) // left edge
+            (arr[i][j].i === this.i - 1 && arr[i][j].j === this.j) || // left edge
+            (arr[i][j].i === this.i - 1 && arr[i][j].j === this.j - 1) || // left top
+            (arr[i][j].i === this.i - 1 && arr[i][j].j === this.j + 1) || // left bottom
+            (arr[i][j].i === this.i + 1 && arr[i][j].j === this.j - 1) || // right top
+            (arr[i][j].i === this.i + 1 && arr[i][j].j === this.j + 1)) // right bottom
         ) {
             this.edges.push(arr[i][j]);
         }

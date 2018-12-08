@@ -57,6 +57,8 @@ function setup() {
   document.getElementById("btn-1").addEventListener("click", () => {
 
       if (waiterState == 0 && client1.state) {
+          console.log("WAITER GOES TO CLIENT 1");
+          console.log("---------------------");
           waiterState = 1;
           takeOrder(client1Path);
       }
@@ -70,7 +72,10 @@ function setup() {
       }
   });
   document.getElementById("btn-2").addEventListener("click", () => {
+
     if (waiterState == 0 && client2.state) {
+        console.log("WAITER GOES TO CLIENT 2");
+        console.log("---------------------");
         takeOrder(client2Path);
         waiterState = 2;
     }
@@ -84,7 +89,10 @@ function setup() {
     }
   });
   document.getElementById("btn-3").addEventListener("click", () => {
+
     if (waiterState == 0 && client3.state) {
+        console.log("WAITER GOES TO CLIENT 3");
+        console.log("---------------------");
         takeOrder(client3Path);
         waiterState = 3;
     }
@@ -98,7 +106,10 @@ function setup() {
     }
   });
   document.getElementById("btn-4").addEventListener("click", () => {
+
     if (waiterState == 0 && client4.state) {
+        console.log("WAITER GOES TO CLIENT 4");
+        console.log("---------------------");
         takeOrder(client4Path);
         waiterState = 4;
     }
@@ -112,7 +123,10 @@ function setup() {
     }
   });
   document.getElementById("btn-5").addEventListener("click", () => {
+
     if (waiterState == 0 && client5.state) {
+        console.log("WAITER GOES TO CLIENT 5");
+        console.log("---------------------");
         takeOrder(client5Path);
         waiterState = 5;
     }
@@ -126,7 +140,10 @@ function setup() {
     }
   });
   document.getElementById("btn-6").addEventListener("click", () => {
+
     if (waiterState == 0 && client6.state) {
+        console.log("WAITER GOES TO CLIENT 6");
+        console.log("---------------------");
         takeOrder(client6Path);
         waiterState = 6;
     }
@@ -140,7 +157,10 @@ function setup() {
     }
   });
   document.getElementById("btn-7").addEventListener("click", () => {
+
     if (waiterState == 0 && client7.state) {
+        console.log("WAITER GOES TO CLIENT 7");
+        console.log("---------------------");
         takeOrder(client7Path);
         waiterState = 7;
     }
@@ -154,7 +174,10 @@ function setup() {
     }
   });
   document.getElementById("btn-8").addEventListener("click", () => {
+
     if (waiterState == 0 && client8.state) {
+        console.log("WAITER GOES TO CLIENT 8");
+        console.log("---------------------");
         takeOrder(client8Path);
         waiterState = 8;
     }
@@ -170,21 +193,13 @@ function setup() {
 
   document.getElementById("btn-kitchen").addEventListener("click", () => {
 
-    let client1Path = graph.findPath(client1);
-    let client2Path = graph.findPath(client2);
-    let client3Path = graph.findPath(client3);
-    let client4Path = graph.findPath(client4);
-    let client5Path = graph.findPath(client5);
-    let client6Path = graph.findPath(client6);
-    let client7Path = graph.findPath(client7);
-    let client8Path = graph.findPath(client8);
-
     let timeToLeave = 1000;
-    let timeToCome = 30000;
+    let timeToCome = 1000;
 
       switch (waiterState) {
         case 1:
-          gotoKitchen(client1Path)
+          let client1Path = graph.findPath(client1);
+          gotoKitchen(client1Path);
           waiterState = 0;
           setTimeout(() => {
             client1.state = false;
@@ -195,6 +210,7 @@ function setup() {
           }, timeToCome)
           break;
         case 2:
+            let client2Path = graph.findPath(client2);
             gotoKitchen(client2Path)
             waiterState = 0;
             setTimeout(() => {
@@ -206,6 +222,7 @@ function setup() {
             }, timeToCome)
             break;
         case 3:
+            let client3Path = graph.findPath(client3);
             gotoKitchen(client3Path)
             waiterState = 0;
             setTimeout(() => {
@@ -217,6 +234,7 @@ function setup() {
             }, timeToCome)
             break;
         case 4:
+            let client4Path = graph.findPath(client4);
             gotoKitchen(client4Path)
             waiterState = 0;
             setTimeout(() => {
@@ -228,6 +246,7 @@ function setup() {
             }, timeToCome)
             break;
         case 5:
+            let client5Path = graph.findPath(client5);
             gotoKitchen(client5Path)
             waiterState = 0;
             setTimeout(() => {
@@ -239,6 +258,7 @@ function setup() {
             }, timeToCome)
             break;
         case 6:
+            let client6Path = graph.findPath(client6);
             gotoKitchen(client6Path)
             waiterState = 0;
             setTimeout(() => {
@@ -250,6 +270,7 @@ function setup() {
             }, timeToCome)
             break;
         case 7:
+            let client7Path = graph.findPath(client7);
             gotoKitchen(client7Path)
             waiterState = 0;
             setTimeout(() => {
@@ -261,6 +282,7 @@ function setup() {
             }, timeToCome)
             break;
         case 8:
+            let client8Path = graph.findPath(client8);
             gotoKitchen(client8Path)
             waiterState = 0;
             setTimeout(() => {
@@ -328,7 +350,7 @@ function setup() {
       console.log(`Waiter at position X: ${waiter.i} Y: ${waiter.j}`);
       console.log("---------------------");
 
-    }, i * 150);
+    }, i * 200);
       })();
       }
     }

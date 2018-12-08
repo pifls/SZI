@@ -1,4 +1,4 @@
-let client1PositionX = 5;
+let client1PositionX = 7;
 let client1PositionY = 3;
 let client1 = new Client(1, client1PositionX, client1PositionY);
 let client2PositionX = 12;
@@ -32,13 +32,17 @@ function Client( img, i, j) {
   this.parent = null;
   this.img = img;
 
+  this.f = 0;
+  this.g = 0;
+  this.h = 0;
+
 
   this.show = () => {
     let x = i * w;
     let y = j * w;
 
     // draw a cell with a waiter
-    stroke(150);
+    stroke(200);
     fill('#e4e4e4');
     rect(x, y, w, w);
 
