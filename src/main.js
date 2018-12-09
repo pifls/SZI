@@ -396,8 +396,6 @@ function setup() {
         }
       }
 
-      let graph = new Graph();
-
       console.log(`Waiter at position X: ${waiter.i} Y: ${waiter.j}`);
       console.log("---------------------");
 
@@ -424,7 +422,6 @@ function draw() {
   }
 }
 
-/* setup grid again to make  */
 const setupGrid = () => {
 
     /* put cells into the grid */

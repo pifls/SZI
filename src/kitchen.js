@@ -26,6 +26,6 @@ function Kitchen(i, j) {
     }
 
     this.addEdges = arr => {
-      /* tables don't have edges */
+    
     }
   }

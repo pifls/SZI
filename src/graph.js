@@ -6,6 +6,7 @@ const removeFromArray = (arr, element) => {
     }
 }
 
+/* HEURISTIC FUNCTION that takes distance between actual node and goal and multiply it by node weight */
 const heuristic = (a, b) => {
 
     let dist = Math.hypot(a.i - b.i, a.j - b.j);
@@ -15,7 +16,7 @@ const heuristic = (a, b) => {
 
 function Graph() {
 
-    // Function receives start and finish and return the shortest path between these places / uses BFS algorithm
+    // Function receives start and finish and return the shortest path between these places / uses A* algorithm
     this.findPath = (s, f) => {
         setupGrid();
 
@@ -47,7 +48,6 @@ function Graph() {
                     temp = temp.parent;
                  }
             }
-
             removeFromArray(openSet, current);
             closedSet.push(current);
 
@@ -76,15 +76,11 @@ function Graph() {
                         neighbor.f = neighbor.g + neighbor.h;
                         neighbor.parent = current;
                     }
-
                 }
-
             }
         } 
-
         path.reverse().pop();
-
+        
         return path;
-
     }
  }

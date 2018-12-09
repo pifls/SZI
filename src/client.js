@@ -38,7 +38,6 @@ function Client( img, i, j) {
 
   this.weight = 1;
 
-
   this.show = () => {
     let x = i * w;
     let y = j * w;
