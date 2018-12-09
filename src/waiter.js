@@ -13,17 +13,19 @@ function Waiter(i, j) {
   this.g = 0;
   this.h = 0;
 
+  this.weight = 1;
+
   this.show = () => {
     let x = i * w;
     let y = j * w;
 
     // draw a cell with a waiter
     if (i == 1 && j == 0) {
-      stroke(200);
+      stroke(250);
       fill('#e4e4e4');
       rect(x, y, w, w);
     } else {
-    stroke(200);
+    stroke(250);
     fill('#e4e4e4');
     rect(x, y, w, w);
     image(img, x + 3, y + 3, img.width / 1.1, img.height / 1.1);

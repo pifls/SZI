@@ -26,7 +26,8 @@ function setup() {
   kitchenImg = loadImage("./assets/kitchen.png");
   tableImg = loadImage("./assets/table.png");
   spotImg = loadImage("./assets/spot.png");
-  plantImg = loadImage("./assets/plant.png");
+  plantImg = loadImage("./assets/plant.png");  
+  boardImg = loadImage("./assets/board.png");  
   client1Img = loadImage("./assets/client1.png");
   client2Img = loadImage("./assets/client2.png");
   client3Img = loadImage("./assets/client3.png");
@@ -191,7 +192,7 @@ function setup() {
   document.getElementById("btn-kitchen").addEventListener("click", () => {
 
     let timeToLeave = 1000;
-    let timeToCome = 10000;
+    let timeToCome = 30000;
 
       switch (waiterState) {
         case 1:
@@ -330,6 +331,17 @@ function setup() {
       grid[client7PositionX][client7PositionY] = client7;
       grid[client8PositionX][client8PositionY] = client8;
 
+      grid[board1PositionX][board1PositionY] = board1;
+      grid[board2PositionX][board2PositionY] = board2;
+      grid[board3PositionX][board3PositionY] = board3;
+      grid[board4PositionX][board4PositionY] = board4;
+      grid[board5PositionX][board5PositionY] = board5;
+      grid[board6PositionX][board6PositionY] = board6;
+      grid[board7PositionX][board7PositionY] = board7;
+      grid[board8PositionX][board8PositionY] = board8;
+      grid[board9PositionX][board9PositionY] = board9;
+      grid[board10PositionX][board10PositionY] = board10;
+
       grid[spot1PositionX][spot1PositionY] = spot1;
       grid[spot2PositionX][spot2PositionY] = spot2;
       grid[spot3PositionX][spot3PositionY] = spot3;
@@ -421,16 +433,16 @@ const setupGrid = () => {
       grid[client7PositionX][client7PositionY] = client7;
       grid[client8PositionX][client8PositionY] = client8;
 
-      grid[spot1PositionX][spot1PositionY] = spot1;
-      grid[spot2PositionX][spot2PositionY] = spot2;
-      grid[spot3PositionX][spot3PositionY] = spot3;
-      grid[spot4PositionX][spot4PositionY] = spot4;
-      grid[spot5PositionX][spot5PositionY] = spot5;
-      grid[spot6PositionX][spot6PositionY] = spot6;
-      grid[spot7PositionX][spot7PositionY] = spot7;
-      grid[spot8PositionX][spot8PositionY] = spot8;
-      grid[spot9PositionX][spot9PositionY] = spot9;
-      grid[spot10PositionX][spot10PositionY] = spot10;
+      grid[board1PositionX][board1PositionY] = board1;
+      grid[board2PositionX][board2PositionY] = board2;
+      grid[board3PositionX][board3PositionY] = board3;
+      grid[board4PositionX][board4PositionY] = board4;
+      grid[board5PositionX][board5PositionY] = board5;
+      grid[board6PositionX][board6PositionY] = board6;
+      grid[board7PositionX][board7PositionY] = board7;
+      grid[board8PositionX][board8PositionY] = board8;
+      grid[board9PositionX][board9PositionY] = board9;
+      grid[board10PositionX][board10PositionY] = board10;
 
       grid[plant1PositionX][plant1PositionY] = plant1;
       grid[plant2PositionX][plant2PositionY] = plant2;
@@ -442,6 +454,17 @@ const setupGrid = () => {
       grid[plant8PositionX][plant8PositionY] = plant8;
       grid[plant9PositionX][plant9PositionY] = plant9;
       grid[plant10PositionX][plant10PositionY] = plant10;
+
+      grid[spot1PositionX][spot1PositionY] = spot1;
+      grid[spot2PositionX][spot2PositionY] = spot2;
+      grid[spot3PositionX][spot3PositionY] = spot3;
+      grid[spot4PositionX][spot4PositionY] = spot4;
+      grid[spot5PositionX][spot5PositionY] = spot5;
+      grid[spot6PositionX][spot6PositionY] = spot6;
+      grid[spot7PositionX][spot7PositionY] = spot7;
+      grid[spot8PositionX][spot8PositionY] = spot8;
+      grid[spot9PositionX][spot9PositionY] = spot9;
+      grid[spot10PositionX][spot10PositionY] = spot10;
       
 
       /* adding edges to cells (it makes grid a graph) */

@@ -41,12 +41,14 @@ function Table(i, j, n) {
     this.g = 0;
     this.h = 0;
 
+    this.weight = 1;
+
     this.show = () => {
       let x = i * w;
       let y = j * w;
 
       // draw a cell with table and it's number
-      stroke(200);
+      stroke(250);
       fill('#e4e4e4');
       rect(x, y, w, w);
       image(tableImg, x + 3, y + 3, img.width / 1.3, img.height / 1.3);

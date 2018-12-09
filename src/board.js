@@ -1,35 +1,35 @@
-let spot1PositionX = 3;
-let spot1PositionY = 2;
-let spot1 = new Spot(spot1PositionX, spot1PositionY);
-let spot2PositionX = 10;
-let spot2PositionY = 3;
-let spot2 = new Spot(spot2PositionX, spot2PositionY);
-let spot3PositionX = 7;
-let spot3PositionY = 5;
-let spot3 = new Spot(spot3PositionX, spot3PositionY);
-let spot4PositionX = 15;
-let spot4PositionY = 5;
-let spot4 = new Spot(spot4PositionX, spot4PositionY);
-let spot5PositionX = 13;
-let spot5PositionY = 8;
-let spot5 = new Spot(spot5PositionX, spot5PositionY);
-let spot6PositionX = 10;
-let spot6PositionY = 7;
-let spot6 = new Spot(spot6PositionX, spot6PositionY);
-let spot7PositionX = 3;
-let spot7PositionY = 6;
-let spot7 = new Spot(spot7PositionX, spot7PositionY);
-let spot8PositionX = 8;
-let spot8PositionY = 10;
-let spot8 = new Spot(spot8PositionX, spot8PositionY);
-let spot9PositionX = 3;
-let spot9PositionY = 11;
-let spot9 = new Spot(spot9PositionX, spot9PositionY);
-let spot10PositionX = 15;
-let spot10PositionY = 9;
-let spot10 = new Spot(spot10PositionX, spot10PositionY);
+let board1PositionX = 4;
+let board1PositionY = 2;
+let board1 = new Board(board1PositionX, board1PositionY);
+let board2PositionX = 9;
+let board2PositionY = 3;
+let board2 = new Board(board2PositionX, board2PositionY);
+let board3PositionX = 10;
+let board3PositionY = 4;
+let board3 = new Board(board3PositionX, board3PositionY);
+let board4PositionX = 12;
+let board4PositionY = 5;
+let board4 = new Board(board4PositionX, board4PositionY);
+let board5PositionX = 15;
+let board5PositionY = 6;
+let board5 = new Board(board5PositionX, board5PositionY);
+let board6PositionX = 4;
+let board6PositionY = 7;
+let board6 = new Board(board6PositionX, board6PositionY);
+let board7PositionX = 6;
+let board7PositionY = 8;
+let board7 = new Board(board7PositionX, board7PositionY);
+let board8PositionX = 9;
+let board8PositionY = 9;
+let board8 = new Board(board8PositionX, board8PositionY);
+let board9PositionX = 5;
+let board9PositionY = 10;
+let board9 = new Board(board9PositionX, board9PositionY);
+let board10PositionX = 15;
+let board10PositionY = 8;
+let board10 = new Board(board10PositionX, board10PositionY);
 
-function Spot(i, j) {
+function Board(i, j) {
     this.i = i;
     this.j = j;
     this.edges = [];
@@ -40,7 +40,7 @@ function Spot(i, j) {
     this.g = 0;
     this.h = 0;
 
-    this.weight = 1.5;
+    this.weight = 0.5;
 
     this.show = () => {
       let x = i * w;
@@ -50,7 +50,7 @@ function Spot(i, j) {
     stroke(250);
     fill('#e4e4e4');
     rect(x, y, w, w);
-    image(spotImg, x + 3 , y + 3, img.width / 1.3, img.height / 1.3);
+    image(boardImg, x + 3 , y + 3, img.width / 1.3, img.height / 1.3);
     }
 
     this.addEdges = arr => {

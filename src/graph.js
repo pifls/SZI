@@ -8,8 +8,9 @@ const removeFromArray = (arr, element) => {
 
 const heuristic = (a, b) => {
 
-    let d = Math.hypot(a.i - b.i, a.j - b.j);
-    return d;
+    let dist = Math.hypot(a.i - b.i, a.j - b.j);
+
+    return dist * a.weight;
 }
 
 function Graph() {

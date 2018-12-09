@@ -20,13 +20,13 @@ let plant7PositionX = 5;
 let plant7PositionY = 5;
 let plant7 = new Plant(plant7PositionX, plant7PositionY);
 let plant8PositionX = 8;
-let plant8PositionY = 8;
+let plant8PositionY = 7;
 let plant8 = new Plant(plant8PositionX, plant8PositionY);
-let plant9PositionX = 3;
-let plant9PositionY = 10;
+let plant9PositionX = 14;
+let plant9PositionY = 4;
 let plant9 = new Plant(plant9PositionX, plant9PositionY);
-let plant10PositionX = 13;
-let plant10PositionY = 11;
+let plant10PositionX = 14;
+let plant10PositionY = 2;
 let plant10 = new Plant(plant10PositionX, plant10PositionY);
 
 function Plant(i, j) {
@@ -40,12 +40,14 @@ function Plant(i, j) {
     this.g = 0;
     this.h = 0;
 
+    this.weight = 0;
+
     this.show = () => {
       let x = i * w;
       let y = j * w;
 
     // draw a cell with a waiter
-    stroke(200);
+    stroke(250);
     fill('#e4e4e4');
     rect(x, y, w, w);
     image(plantImg, x + 3 , y + 3, img.width / 1.3, img.height / 1.3);
