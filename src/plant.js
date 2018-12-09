@@ -1,4 +1,4 @@
-3 let plant1PositionX = 8;
+ let plant1PositionX = 8;
  let plant1PositionY = 3;
  let plant1 = new Plant(plant1PositionX, plant1PositionY);
  let plant2PositionX = 14;
