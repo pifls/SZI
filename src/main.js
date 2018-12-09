@@ -323,7 +323,7 @@ function setup() {
       grid[table7PositionX][table7PositionY] = table7;
       grid[table8PositionX][table8PositionY] = table8;
       grid[table9PositionX][table9PositionY] = table9;
-      grid[table10PositionX][table10PositionY] = table10;
+      //grid[table10PositionX][table10PositionY] = table10;
 
       grid[client1PositionX][client1PositionY] = client1;
       grid[client2PositionX][client2PositionY] = client2;
@@ -442,7 +442,7 @@ const setupGrid = () => {
       grid[table7PositionX][table7PositionY] = table7;
       grid[table8PositionX][table8PositionY] = table8;
       grid[table9PositionX][table9PositionY] = table9;
-      grid[table10PositionX][table10PositionY] = table10;
+      //grid[table10PositionX][table10PositionY] = table10;
       
       grid[client1PositionX][client1PositionY] = client1;
       grid[client2PositionX][client2PositionY] = client2;
