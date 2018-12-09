@@ -22,7 +22,7 @@ function Kitchen(i, j) {
     stroke(250);
     fill('#e4e4e4');
     rect(x, y, w, w);
-    image(kitchenImg, x + 3 , y + 3, img.width / 1.3, img.height / 1.3);
+    image(kitchenImg, x + 8 , y + 8, img.width / 1.3, img.height / 1.3);
     }
 
     this.addEdges = arr => {

@@ -28,7 +28,7 @@ function Waiter(i, j) {
     stroke(250);
     fill('#e4e4e4');
     rect(x, y, w, w);
-    image(img, x + 3, y + 3, img.width / 1.1, img.height / 1.1);
+    image(img, x + 8, y + 8, img.width / 1.1, img.height / 1.1);
     }
   }
 

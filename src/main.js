@@ -1,8 +1,8 @@
-let cols = 15;
+let cols = 12;
 let rows = 20;
 
 // cell width and height
-let w = 30;
+let w = 40;
 
 /*         0 - waiter at gotoKitchen
     1,2,3... - waiter at table 1,2.3...
@@ -21,13 +21,14 @@ let grid = make2DArray(rows, cols);
 
 /* p5 function to setup some stuff */
 function setup() {
-  createCanvas(601, 451);
+  createCanvas(801, 481);
   img = loadImage("./assets/waiter.png");
   kitchenImg = loadImage("./assets/kitchen.png");
   tableImg = loadImage("./assets/table.png");
   spotImg = loadImage("./assets/spot.png");
   plantImg = loadImage("./assets/plant.png");  
   boardImg = loadImage("./assets/board.png");  
+  skaterImg = loadImage("./assets/skater.png");  
   client1Img = loadImage("./assets/client1.png");
   client2Img = loadImage("./assets/client2.png");
   client3Img = loadImage("./assets/client3.png");
@@ -310,6 +311,8 @@ function setup() {
         }
       let waiter = new Waiter(clientPath[i].i, clientPath[i].j);
 
+      grid[clientPath[i].i][clientPath[i].j]  = waiter;
+
       grid[kitchenPositionX][kitchenPositionY] = kitchen;
       grid[table1PositionX][table1PositionY] = table1;
       grid[table2PositionX][table2PositionY] = table2;
@@ -331,15 +334,36 @@ function setup() {
       grid[client7PositionX][client7PositionY] = client7;
       grid[client8PositionX][client8PositionY] = client8;
 
+      board1.active = false;
+      board2.active = false;
+      board3.active = false;
+      board4.active = false;
+      board5.active = false;
+      board6.active = false;
+      board7.active = false;
+      board8.active = false;
+      board9.active = false;
+      board10.active = false;
+
+      if (board1PositionX == clientPath[i].i && board1PositionY == clientPath[i].j){ board1.active = true;}
       grid[board1PositionX][board1PositionY] = board1;
+      if (board2PositionX == clientPath[i].i && board2PositionY == clientPath[i].j){ board2.active = true;}
       grid[board2PositionX][board2PositionY] = board2;
+      if (board3PositionX == clientPath[i].i && board3PositionY == clientPath[i].j){ board3.active = true;}
       grid[board3PositionX][board3PositionY] = board3;
+      if (board4PositionX == clientPath[i].i && board4PositionY == clientPath[i].j){ board4.active = true;}
       grid[board4PositionX][board4PositionY] = board4;
+      if (board5PositionX == clientPath[i].i && board5PositionY == clientPath[i].j){ board5.active = true;}
       grid[board5PositionX][board5PositionY] = board5;
+      if (board6PositionX == clientPath[i].i && board6PositionY == clientPath[i].j){ board6.active = true;}
       grid[board6PositionX][board6PositionY] = board6;
+      if (board7PositionX == clientPath[i].i && board7PositionY == clientPath[i].j){ board7.active = true;}
       grid[board7PositionX][board7PositionY] = board7;
+      if (board8PositionX == clientPath[i].i && board8PositionY == clientPath[i].j){ board8.active = true;}
       grid[board8PositionX][board8PositionY] = board8;
+      if (board9PositionX == clientPath[i].i && board9PositionY == clientPath[i].j){ board9.active = true;}
       grid[board9PositionX][board9PositionY] = board9;
+      if (board10PositionX == clientPath[i].i && board10PositionY == clientPath[i].j){ board10.active = true;}
       grid[board10PositionX][board10PositionY] = board10;
 
       grid[spot1PositionX][spot1PositionY] = spot1;
@@ -364,7 +388,6 @@ function setup() {
       grid[plant9PositionX][plant9PositionY] = plant9;
       grid[plant10PositionX][plant10PositionY] = plant10;
 
-      grid[clientPath[i].i][clientPath[i].j]   = waiter;
 
 
       for( let i = 0; i < rows; i++){
@@ -378,7 +401,7 @@ function setup() {
       console.log(`Waiter at position X: ${waiter.i} Y: ${waiter.j}`);
       console.log("---------------------");
 
-    }, i * 200);
+    }, i * 350);
       })();
       }
     }

@@ -35,6 +35,7 @@ function Board(i, j) {
     this.edges = [];
     this.searched = false;
     this.parent = null;
+    this.active = false;
 
     this.f = 0;
     this.g = 0;
@@ -50,7 +51,11 @@ function Board(i, j) {
     stroke(250);
     fill('#e4e4e4');
     rect(x, y, w, w);
-    image(boardImg, x + 3 , y + 3, img.width / 1.3, img.height / 1.3);
+    if ( this.active ) {
+      image(skaterImg, x + 8 , y + 10, img.width / 1.3, img.height / 1.3);
+    } else {
+      image(boardImg, x + 8 , y + 18, img.width / 1.3, img.height / 1.3);
+    }
     }
 
     this.addEdges = arr => {

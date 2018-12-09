@@ -51,7 +51,7 @@ function Table(i, j, n) {
       stroke(250);
       fill('#e4e4e4');
       rect(x, y, w, w);
-      image(tableImg, x + 3, y + 3, img.width / 1.3, img.height / 1.3);
+      image(tableImg, x + 8, y + 14, img.width / 1.3, img.height / 1.3);
     }
 
     this.addEdges = arr => {

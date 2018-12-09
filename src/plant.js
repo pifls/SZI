@@ -50,7 +50,7 @@ function Plant(i, j) {
     stroke(250);
     fill('#e4e4e4');
     rect(x, y, w, w);
-    image(plantImg, x + 3 , y + 3, img.width / 1.3, img.height / 1.3);
+    image(plantImg, x + 8 , y + 10, img.width / 1.3, img.height / 1.3);
     }
 
     this.addEdges = arr => {

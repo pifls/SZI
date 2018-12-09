@@ -51,28 +51,28 @@ function Client( img, i, j) {
     if ( this.state ) {
       switch (this.img) {
         case 1:
-          image(client1Img, x, y, img.width, img.height);
+          image(client1Img, x + 3, y + 6, img.width, img.height);
           break;
         case 2:
-          image(client2Img, x, y, img.width, img.height);
+          image(client2Img, x + 3, y + 6, img.width, img.height);
           break;
         case 3:
-          image(client3Img, x, y, img.width, img.height);
+          image(client3Img, x + 3, y + 6, img.width, img.height);
           break;
         case 4:
-          image(client4Img, x, y, img.width, img.height);
+          image(client4Img, x + 3, y + 6, img.width, img.height);
           break;
         case 5:
-          image(client5Img, x, y, img.width, img.height);
+          image(client5Img, x + 3, y + 6, img.width, img.height);
           break;
         case 6:
-          image(client6Img, x, y, img.width, img.height);
+          image(client6Img, x + 3, y + 6, img.width, img.height);
           break;
         case 7:
-          image(client7Img, x, y, img.width, img.height);
+          image(client7Img, x + 3, y + 6, img.width, img.height);
           break;
         case 8:
-          image(client8Img, x, y, img.width, img.height);
+          image(client8Img, x + 3, y + 6, img.width, img.height);
           break;
         default: 
       }
