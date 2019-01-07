@@ -1,0 +1,1 @@
+# W tym folderze trzymane są pliki w formacie npy natomiast z powodu ich wielkości nie są umieszczone w repozytorium

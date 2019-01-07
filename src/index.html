@@ -1,36 +1,11 @@
 <html>
   <head>
     <title>Waiter</title>
-    <style>
-    body {
-      padding: 0;
-      margin: 15px;
-      font-size: 6px;}
-    #con {
-      display: block;
-      margin-bottom: 20px;
-      }
-    .btn {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 15px;
-      margin: 4px;
-      padding: 1px;
-      margin-right: 15px;
-      background-color: #D4E1E0;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background-color: #D0D8D8;
-    }
-    #btn-kitchen {
-      width: 60px;
-      height: 40px;
-    }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script src="./podprojekt1/libraries/Toy-Neural-Network-JS/lib/matrix.js"></script>
+    <script src="./podprojekt1/libraries/Toy-Neural-Network-JS/lib/nn.js"></script>
     <script src="main.js"></script>
     <script src="waiter.js"></script>
     <script src="cell.js"></script>
@@ -41,10 +16,11 @@
     <script src="spot.js"></script>
     <script src="plant.js"></script>
     <script src="board.js"></script>
+    <script src="./podprojekt1/podprojekt1.js"></script>
   </head>
   <body>
     <div id="con">
-      <button class="btn" id="btn-1">
+      <button  class="btn" id="btn-1">
         <img src="./assets/client1.png">
       </button>
       <button class="btn" id="btn-2">
@@ -72,6 +48,27 @@
       <button class="btn" id="btn-kitchen">
         <img src="./assets/kitchen.png">
       </button>
+    </div>
+    <div id="drawDish">
+        <div id="menu">
+            Menu:
+            <ul>
+              <li>Pizza</li>
+              <li>Hamburger</li>
+              <li>Fish</li>
+              <li>Banana</li>
+              <li>Ice Cream</li>
+              <li>Coffee</li>
+              <li>Wine</li>
+            </ul> 
+          </div>
+      <div class="buttons">
+        <button id="clear">clear</button>
+        <button id="train">train</button>
+        <button id="test">test</button>
+        <button id="guess">order</button>
+        <p id="output"></p>
+    </div>
     </div>
   </body>
 </html>
