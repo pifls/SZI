@@ -1,9 +1,13 @@
-# Autonomous waiter
+# Autonomous Waiter
 
-Project for **Artificial Intelligence** classes
+Project for Artificial Intelligence classes
 
-## How to run
+## Installation
 
-1. Clone this repository
-2. Open it in a text editor
-3. Run in on a live server
+Use the live server to run this app
+
+
+## A* algorithm
+#### Waiter finds the most optimal path between kitchen and client
+
+![Alt Text](https://media.giphy.com/media/Tdi91VsYmL81WyM3c4/giphy.gif)
