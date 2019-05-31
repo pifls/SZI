@@ -1,65 +1,49 @@
 <html>
   <head>
-    <title>Waiter</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Autonomous waiter</title>
+    <link rel="stylesheet" href="./css/index.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
-    <script src="./podprojekt1/libraries/Toy-Neural-Network-JS/lib/matrix.js"></script>
-    <script src="./podprojekt1/libraries/Toy-Neural-Network-JS/lib/nn.js"></script>
-    <script src="main.js"></script>
-    <script src="waiter.js"></script>
-    <script src="cell.js"></script>
-    <script src="table.js"></script>
-    <script src="graph.js"></script>
-    <script src="kitchen.js"></script>
-    <script src="client.js"></script>
-    <script src="spot.js"></script>
-    <script src="plant.js"></script>
-    <script src="board.js"></script>
-    <script src="./podprojekt1/podprojekt1.js"></script>
+    <script src="./neural-network-stuff/libraries/Toy-Neural-Network-JS/lib/matrix.js"></script>
+    <script src="./neural-network-stuff/libraries/Toy-Neural-Network-JS/lib/nn.js"></script>
+    <script src="/src/js/main.js"></script>
+    <script src="/src/js/cell.js"></script>
+    <script src="/src/js/graph.js"></script>
+    <script src="/src/js/staff/waiter.js"></script>
+    <script src="/src/js/staff/kitchen.js"></script>
+    <script src="/src/js/staff/client.js"></script>
+    <script src="/src/js/objects/table.js"></script>
+    <script src="/src/js/objects/plant.js"></script>
+    <script src="/src/js/objects/spot.js"></script>
+    <script src="/src/js/objects/board.js"></script>
+    <script src="./neural-network-stuff/menu.js"></script>
   </head>
   <body>
-    <div id="con">
-      <button  class="btn" id="btn-1">
-        <img src="./assets/client1.png">
-      </button>
-      <button class="btn" id="btn-2">
-        <img src="./assets/client2.png">
-      </button>
-      <button class="btn" id="btn-3">
-        <img src="./assets/client3.png">
-      </button>
-      <button class="btn" id="btn-4">
-        <img src="./assets/client4.png">
-      </button>
-      <button class="btn" id="btn-5">
-        <img src="./assets/client5.png">
-      </button>
-      <button class="btn" id="btn-6">
-        <img src="./assets/client6.png">
-      </button>
-      <button class="btn" id="btn-7">
-        <img src="./assets/client7.png">
-      </button>
-      <button class="btn" id="btn-8">
-        <img src="./assets/client8.png">
-      </button>
-
-      <button class="btn" id="btn-kitchen">
-        <img src="./assets/kitchen.png">
-      </button>
+    <div id="restaurant">
+        <div id="nav">
+            <button  class="btn" id="btn-1"><img src="./assets/clients/client1.png"></button>
+            <button class="btn" id="btn-2"><img src="./assets/clients/client2.png"></button>
+            <button class="btn" id="btn-3"><img src="./assets/clients/client3.png"></button>
+            <button class="btn" id="btn-4"><img src="./assets/clients/client4.png"></button>
+            <button class="btn" id="btn-5"><img src="./assets/clients/client5.png"></button>
+            <button class="btn" id="btn-6"><img src="./assets/clients/client6.png"></button>
+            <button class="btn" id="btn-7"><img src="./assets/clients/client7.png"></button>
+            <button class="btn" id="btn-8"><img src="./assets/clients/client8.png"></button>
+            <button class="btn" id="btn-kitchen"><img src="./assets//staff/kitchen.png"></button>
+          </div>
+        <div id="sketch-holder">
     </div>
     <div id="drawDish">
         <div id="menu">
-            Menu:
+            <span class="menu-title">Menu</span>
             <ul>
-              <li>Pizza</li>
-              <li>Hamburger</li>
-              <li>Fish</li>
-              <li>Banana</li>
-              <li>Ice Cream</li>
-              <li>Coffee</li>
-              <li>Wine</li>
+              <li>Pizza - 10$</li>
+              <li>Hamburger - 6$</li>
+              <li>Fish - 12$</li>
+              <li>Banana - 1$</li>
+              <li>Ice Cream - 2$</li>
+              <li>Coffee - 3$</li>
+              <li>Wine 5$ </li>
             </ul> 
           </div>
       <div class="buttons">
@@ -68,7 +52,7 @@
         <button id="test">test</button>
         <button id="guess">order</button>
         <p id="output"></p>
-    </div>
+      </div>
     </div>
   </body>
 </html>

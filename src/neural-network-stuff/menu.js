@@ -90,13 +90,13 @@ const testAll = testing => {
   preload = function() {
    hide();
 
-   coffies_data = loadBytes('./podprojekt1/data/coffee1000.bin');
-   bananas_data = loadBytes('./podprojekt1/data/banana1000.bin');
-   fishes_data = loadBytes('./podprojekt1/data/fish1000.bin');
-   hamburgers_data = loadBytes('./podprojekt1/data/hamburger1000.bin');
-   icecreams_data = loadBytes('./podprojekt1/data/icecream1000.bin');
-   pizzas_data = loadBytes('./podprojekt1/data/pizza1000.bin');
-   wines_data = loadBytes('./podprojekt1/data/wine1000.bin');
+   coffies_data = loadBytes('./neural-network-stuff/data/coffee1000.bin');
+   bananas_data = loadBytes('./neural-network-stuff/data/banana1000.bin');
+   fishes_data = loadBytes('./neural-network-stuff/data/fish1000.bin');
+   hamburgers_data = loadBytes('./neural-network-stuff/data/hamburger1000.bin');
+   icecreams_data = loadBytes('./neural-network-stuff/data/icecream1000.bin');
+   pizzas_data = loadBytes('./neural-network-stuff/data/pizza1000.bin');
+   wines_data = loadBytes('./neural-network-stuff/data/wine1000.bin');
  }
 
  let canvas;

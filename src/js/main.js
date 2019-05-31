@@ -22,24 +22,26 @@ let grid = make2DArray(rows, cols);
 /* p5 function to setup some stuff */
 function setup() {
   createCanvas(801, 481);
+  canvas.parent('sketch-holder');
 
   setupPodprojekt1();
+  document.getElementById("defaultCanvas0").style.display = "none";
   
-  img = loadImage("./assets/waiter.png");
-  kitchenImg = loadImage("./assets/kitchen.png");
-  tableImg = loadImage("./assets/table.png");
-  spotImg = loadImage("./assets/spot.png");
-  plantImg = loadImage("./assets/plant.png");  
-  boardImg = loadImage("./assets/board.png");  
-  skaterImg = loadImage("./assets/skater.png");  
-  client1Img = loadImage("./assets/client1.png");
-  client2Img = loadImage("./assets/client2.png");
-  client3Img = loadImage("./assets/client3.png");
-  client4Img = loadImage("./assets/client4.png");
-  client5Img = loadImage("./assets/client5.png");
-  client6Img = loadImage("./assets/client6.png");
-  client7Img = loadImage("./assets/client7.png");
-  client8Img = loadImage("./assets/client8.png");
+  img = loadImage("./assets/staff/waiter.png");
+  kitchenImg = loadImage("./assets/staff/kitchen.png");
+  tableImg = loadImage("./assets/objects/table.png");
+  spotImg = loadImage("./assets/objects/spot.png");
+  plantImg = loadImage("./assets/objects/plant.png");  
+  boardImg = loadImage("./assets/objects/board.png");  
+  skaterImg = loadImage("./assets/staff/skater.png");  
+  client1Img = loadImage("./assets/clients/client1.png");
+  client2Img = loadImage("./assets/clients/client2.png");
+  client3Img = loadImage("./assets/clients/client3.png");
+  client4Img = loadImage("./assets/clients/client4.png");
+  client5Img = loadImage("./assets/clients/client5.png");
+  client6Img = loadImage("./assets/clients/client6.png");
+  client7Img = loadImage("./assets/clients/client7.png");
+  client8Img = loadImage("./assets/clients/client8.png");
 
   setupGrid();
 
@@ -518,9 +520,17 @@ const setupGrid = () => {
 
 function hide() {
   var x = document.getElementById("drawDish");
+  var y = document.getElementById("defaultCanvas0");
+  if(y){
+    y.style.display = "none";
+  }
   if (x.style.display === "none") {
     x.style.display = "block";
+    y.style.display = "block";
   } else {
     x.style.display = "none";
+    if(y){
+      y.style.display = "none";
+    }
   }
 }
