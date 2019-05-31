@@ -1,6 +1,6 @@
-# Automatyczny kelner
+# Autonomous waiter
 
-Project for **Sztuczna Inteligencja** classes
+Project for **Artificial Intelligence** classes
 
 ## How to run
 
