@@ -1,6 +1,6 @@
 # Automatyczny kelner
 
-Projekt na zajęcia z przedmiotu **Sztuczna Inteligencja**
+Project for **Sztuczna Inteligencja** classes
 
 ## How to run
 
