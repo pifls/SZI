@@ -1,0 +1,90 @@
+body {
+    padding: 0;
+    margin: 15px;
+    font-size: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#defaultCanvas1 {
+  position: absolute;
+  top: 200px;
+  left: calc(50% - 400px);
+}
+#nav {
+    width: 800px;
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 400px);
+    display: block;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    background-color: #fff;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+    margin: 4px;
+    padding: 1px;
+    margin-right: 15px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.1);
+    border: 3px solid #fdcb6e;
+    cursor: pointer;
+    outline: none;
+}
+.btn:hover {
+    background-color: #fdcb6e;
+}
+
+#drawDish {
+    height: 300px;
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: calc(50% + 450px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#defaultCanvas0 {
+    position: absolute;
+    top: 370px;
+    left: calc(50% + 450px);
+    border: 3px solid #000;
+}
+.buttons button {
+  background-color: #fff;
+  height: 30px;
+  width: 50px;
+  margin-left: 10px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.1);
+  border: 1px solid #fdcb6e;
+  outline: none;
+  cursor: pointer;
+}
+.buttons button:hover {
+  background-color: #fdcb6e;
+  color: #fff;
+}
+
+#menu .menu-title {
+  font-size: 2em;
+}
+#menu ul {
+  list-style: none;
+}
+#menu ul li {
+  font-size: 1.2em;
+}
+
+#menu   { font-size: 16px; }
+#output { 
+  position: absolute;
+  top: 550px;
+  left: 0;
+  font-size: 4em;
+ }

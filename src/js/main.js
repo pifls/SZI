@@ -22,21 +22,26 @@ let grid = make2DArray(rows, cols);
 /* p5 function to setup some stuff */
 function setup() {
   createCanvas(801, 481);
-  img = loadImage("./assets/waiter.png");
-  kitchenImg = loadImage("./assets/kitchen.png");
-  tableImg = loadImage("./assets/table.png");
-  spotImg = loadImage("./assets/spot.png");
-  plantImg = loadImage("./assets/plant.png");  
-  boardImg = loadImage("./assets/board.png");  
-  skaterImg = loadImage("./assets/skater.png");  
-  client1Img = loadImage("./assets/client1.png");
-  client2Img = loadImage("./assets/client2.png");
-  client3Img = loadImage("./assets/client3.png");
-  client4Img = loadImage("./assets/client4.png");
-  client5Img = loadImage("./assets/client5.png");
-  client6Img = loadImage("./assets/client6.png");
-  client7Img = loadImage("./assets/client7.png");
-  client8Img = loadImage("./assets/client8.png");
+  canvas.parent('sketch-holder');
+
+  setupPodprojekt1();
+  document.getElementById("defaultCanvas0").style.display = "none";
+  
+  img = loadImage("./assets/staff/waiter.png");
+  kitchenImg = loadImage("./assets/staff/kitchen.png");
+  tableImg = loadImage("./assets/objects/table.png");
+  spotImg = loadImage("./assets/objects/spot.png");
+  plantImg = loadImage("./assets/objects/plant.png");  
+  boardImg = loadImage("./assets/objects/board.png");  
+  skaterImg = loadImage("./assets/staff/skater.png");  
+  client1Img = loadImage("./assets/clients/client1.png");
+  client2Img = loadImage("./assets/clients/client2.png");
+  client3Img = loadImage("./assets/clients/client3.png");
+  client4Img = loadImage("./assets/clients/client4.png");
+  client5Img = loadImage("./assets/clients/client5.png");
+  client6Img = loadImage("./assets/clients/client6.png");
+  client7Img = loadImage("./assets/clients/client7.png");
+  client8Img = loadImage("./assets/clients/client8.png");
 
   setupGrid();
 
@@ -56,6 +61,7 @@ function setup() {
   document.getElementById("btn-1").addEventListener("click", () => {
 
       if (waiterState == 0 && client1.state) {
+          hide();
           console.log("WAITER GOES TO CLIENT 1");
           console.log("---------------------");
           waiterState = 1;
@@ -73,6 +79,7 @@ function setup() {
   document.getElementById("btn-2").addEventListener("click", () => {
 
     if (waiterState == 0 && client2.state) {
+        hide();
         console.log("WAITER GOES TO CLIENT 2");
         console.log("---------------------");
         takeOrder(client2Path);
@@ -90,6 +97,7 @@ function setup() {
   document.getElementById("btn-3").addEventListener("click", () => {
 
     if (waiterState == 0 && client3.state) {
+        hide();
         console.log("WAITER GOES TO CLIENT 3");
         console.log("---------------------");
         takeOrder(client3Path);
@@ -107,6 +115,7 @@ function setup() {
   document.getElementById("btn-4").addEventListener("click", () => {
 
     if (waiterState == 0 && client4.state) {
+        hide();
         console.log("WAITER GOES TO CLIENT 4");
         console.log("---------------------");
         takeOrder(client4Path);
@@ -124,6 +133,7 @@ function setup() {
   document.getElementById("btn-5").addEventListener("click", () => {
 
     if (waiterState == 0 && client5.state) {
+        hide();
         console.log("WAITER GOES TO CLIENT 5");
         console.log("---------------------");
         takeOrder(client5Path);
@@ -141,6 +151,7 @@ function setup() {
   document.getElementById("btn-6").addEventListener("click", () => {
 
     if (waiterState == 0 && client6.state) {
+        hide();
         console.log("WAITER GOES TO CLIENT 6");
         console.log("---------------------");
         takeOrder(client6Path);
@@ -158,6 +169,7 @@ function setup() {
   document.getElementById("btn-7").addEventListener("click", () => {
 
     if (waiterState == 0 && client7.state) {
+        hide();
         console.log("WAITER GOES TO CLIENT 7");
         console.log("---------------------");
         takeOrder(client7Path);
@@ -175,6 +187,7 @@ function setup() {
   document.getElementById("btn-8").addEventListener("click", () => {
 
     if (waiterState == 0 && client8.state) {
+        hide();
         console.log("WAITER GOES TO CLIENT 8");
         console.log("---------------------");
         takeOrder(client8Path);
@@ -197,6 +210,7 @@ function setup() {
 
       switch (waiterState) {
         case 1:
+          hide();
           let client1Path = graph.findPath(waiter, client1);
           gotoKitchen(client1Path);
           waiterState = 0;
@@ -209,6 +223,7 @@ function setup() {
           }, timeToCome)
           break;
         case 2:
+            hide();
             let client2Path = graph.findPath(waiter, client2);
             gotoKitchen(client2Path)
             waiterState = 0;
@@ -221,6 +236,7 @@ function setup() {
             }, timeToCome)
             break;
         case 3:
+            hide();
             let client3Path = graph.findPath(waiter, client3);
             gotoKitchen(client3Path)
             waiterState = 0;
@@ -233,6 +249,7 @@ function setup() {
             }, timeToCome)
             break;
         case 4:
+            hide();
             let client4Path = graph.findPath(waiter, client4);
             gotoKitchen(client4Path)
             waiterState = 0;
@@ -245,6 +262,7 @@ function setup() {
             }, timeToCome)
             break;
         case 5:
+            hide();
             let client5Path = graph.findPath(waiter, client5);
             gotoKitchen(client5Path)
             waiterState = 0;
@@ -257,6 +275,7 @@ function setup() {
             }, timeToCome)
             break;
         case 6:
+            hide();
             let client6Path = graph.findPath(waiter, client6);
             gotoKitchen(client6Path)
             waiterState = 0;
@@ -269,6 +288,7 @@ function setup() {
             }, timeToCome)
             break;
         case 7:
+            hide();
             let client7Path = graph.findPath(waiter, client7);
             gotoKitchen(client7Path)
             waiterState = 0;
@@ -281,6 +301,7 @@ function setup() {
             }, timeToCome)
             break;
         case 8:
+            hide();
             let client8Path = graph.findPath(waiter, client8);
             gotoKitchen(client8Path)
             waiterState = 0;
@@ -494,4 +515,22 @@ const setupGrid = () => {
         }
       }
 
+}
+
+
+function hide() {
+  var x = document.getElementById("drawDish");
+  var y = document.getElementById("defaultCanvas0");
+  if(y){
+    y.style.display = "none";
+  }
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = "block";
+  } else {
+    x.style.display = "none";
+    if(y){
+      y.style.display = "none";
+    }
+  }
 }
