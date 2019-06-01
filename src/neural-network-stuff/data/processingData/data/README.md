@@ -1,1 +1,1 @@
-# W tym folderze trzymane są pliki w formacie npy natomiast z powodu ich wielkości nie są umieszczone w repozytorium
+### This is folder for npy files but because of size of them they are not placed in repository
