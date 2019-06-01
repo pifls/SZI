@@ -3,11 +3,23 @@
 Project for Artificial Intelligence classes
 
 ## Installation
+```
+Clone repository
+Run live server
+```
 
-Use the live server to run this app
+## Sources
+[Dataset](https://quickdraw.withgoogle.com/data)
+
+[Neural Network](https://github.com/CodingTrain/Toy-Neural-Network-JS)
 
 
-## A* algorithm
-#### Waiter finds the most optimal path between kitchen and client
+## A* algorithm in action
+##### Waiter finds the optimal path between kitchen and client
 
-![Alt Text](https://media.giphy.com/media/Tdi91VsYmL81WyM3c4/giphy.gif)
+![Waiter finding optimal path to client](https://media.giphy.com/media/Tdi91VsYmL81WyM3c4/giphy.gif)
+
+## Use of neural network
+##### Waiter 'guess' which dish was orderder
+
+![waiter guessing which dish was ordered](https://media.giphy.com/media/VEc1mWzhehCcSPdvBu/giphy.gif)
